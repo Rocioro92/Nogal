@@ -1,0 +1,280 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  /*Nav*/
+
+
+  body{
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  /*Declaro variable de color beige uso general*/ 
+ $beige: #BF926B;
+ $negro: black;
+ $azulcito: blue;
+ $blanco: white;
+ $colorbeige: nada;
+
+ $estilodecolor: elestiloelegido;
+
+ @if $estilodecolor == $blanco {
+  $colorbeige: $blanco;
+ }
+  @else if $estilodecolor == $negro {
+    $colorbeige: $negro
+  } 
+  @else if $estilodecolor == $azulcito{
+    $colorbeige: $azulcito
+  }
+  @else {
+    $colorbeige: $beige;
+  }
+
+ 
+
+
+ 
+  header {
+    width: 100%;
+    padding: 40px;
+    color: $colorbeige;
+    text-align: center;
+    background: white;
+  }
+   header img
+   {
+      float: left;
+   }
+  nav ul {
+    background: white;
+    text-align: right;
+    list-style: none;
+    overflow: hidden;
+  
+  }
+  
+  ul li {
+    display: inline-block;
+    padding: 20px;
+    transition: all ease-in-out 250ms;
+  }
+  
+  ul li:hover {
+    background: #88684d;
+  }
+
+  ul li a {
+    color: $colorbeige;
+    text-decoration: none;
+  }
+  
+  .hide {
+    padding: 16px;
+    font-size: 22px;
+    background: $colorbeige;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+
+  
+  @media (max-width: 768px) {
+    ul li {
+      width: 100%;
+      padding: 15px;
+      text-align: left;
+    }
+  
+    .hide {
+      display: block;
+    }
+  
+    nav ul {
+    display: none;
+  
+    }
+  }
+
+  /* seccion1*/
+
+  .cover{
+    width: 100%;
+    padding-bottom: 60px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 100px;
+}
+.container_cover{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.cover .container_info{
+    max-width: 400px;
+    margin-top: 40px;
+    z-index: 2;
+}
+.cover h1{
+    max-width: 900px;
+    font-size: 150px;
+    font-weight: 1300;
+    color: #4B505E;
+}
+.cover h2{
+    font-size: 110px;
+    font-weight: 1200;
+    color: $colorbeige;
+    margin-top: -100px;
+}
+.cover p{
+    margin-top: 30px;
+    color: #402312;
+}
+.container_ilustracion{
+    position: right;
+}
+.container_ilustracion img{
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    width: 700px;
+    animation: move_ilustracion 6s ease-in-out infinite;
+}
+@keyframes move_ilustracion {
+    0%{
+        transform: translateY(10px);
+    }
+    25%{
+        transform: translateY(-10%);
+    }
+    100%{
+        transform: translateY(10px)
+    }
+}    
+
+/*Seccionrowflex Productos*/
+
+
+.row{
+    display: flex;
+    padding: 5px;
+    margin-left: 50px;
+}
+.row img{
+  width: 70%;
+}
+.column{
+    flex: 25%;
+    padding: 5px;
+
+}
+.column img{
+    margin-top: 5px;
+
+
+}
+@media (max-width: 800px){
+    .column{
+        flex: 50%;
+    }
+}
+@media (max-width: 600px){
+    .column{
+        flex: 100%;
+    }
+} 
+
+/* Buecle For y concatenacion para estilo de imagenes de abajo*/
+
+
+@for $i from 1 through 3{
+  .mueble#{$i} img{
+    border-radius: 20px;
+  }
+  }
+
+/*footer*/
+
+$redes: (
+  red1: sans-serif,
+  red2: monospace,
+  red3: serif,
+  red4: italic,
+);
+
+@each $red, $font in $redes {
+  .btn--#{$red} {
+    font-family: $font;
+  }
+}
+
+
+.footer-style {
+    padding-top: 50px;
+    background-color:$colorbeige;
+}
+footer {
+  color: white;
+}
+footer h3 {
+  margin-bottom: 30px;
+    font-weight: 800;
+}
+footer .footer-above {
+  padding-top: 50px;
+  background-color: $colorbeige;
+}
+footer .footer-col {
+  margin-bottom: 50px;
+}
+footer .footer-below {
+  padding: 25px 0;
+  background-color: $colorbeige;
+}
+
+/*Shop*/
+
+.section {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-grid-columns: (280px)[auto-fit];
+  grid-template-columns: repeat(auto-fit, 280px);
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1em;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+user agent stylesheet
+section {
+  display: block;
+}
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
