@@ -49,6 +49,10 @@
    {
       float: left;
    }
+   .container_header{
+     max-width: 100px;
+     max-height: 100px;
+   }
   nav ul {
     background: white;
     text-align: right;
@@ -157,6 +161,7 @@
         transform: translateY(10px)
     }
 }    
+
 
 /*Seccionrowflex Productos*/
 
