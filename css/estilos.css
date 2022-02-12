@@ -24,50 +24,58 @@ header img {
   float: left;
 }
 
-nav ul {
-  background: white;
-  text-align: right;
-  list-style: none;
-  overflow: hidden;
-}
 
-ul li {
-  display: inline-block;
-  padding: 20px;
-  -webkit-transition: all ease-in-out 250ms;
-  transition: all ease-in-out 250ms;
-}
-
-ul li:hover {
-  background: #88684d;
-}
-
-ul li a {
-  color: #BF926B;
+.respmenu a {
+  color: inherit;
   text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  border-bottom: 2px solid white;
+  max-width: 200px;
+  background: #BF926B;
+  text-shadow: 1px 1px black;
+}
+.respmenu input[type="checkbox"], .respmenu .fa-bars, .respmenu .fa-times {
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  right: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
 }
 
-.hide {
-  padding: 16px;
-  font-size: 22px;
-  background: #BF926B;
-  color: white;
-  cursor: pointer;
+.respmenu .fa-bars, .respmenu .fa-times {
+  font-size: 48px;
+  pointer-events: none;
+}
+
+.respmenu input[type="checkbox"] {
+  opacity: 0;
+}
+
+.respmenu {
+  color: #BF926B;
+  position: relative;
+
+  min-height: 48px;
+}
+
+.respmenu nav {
   display: none;
 }
 
-@media (max-width: 768px) {
-  ul li {
-    width: 100%;
-    padding: 15px;
-    text-align: left;
-  }
-  .hide {
-    display: block;
-  }
-  nav ul {
-    display: none;
-  }
+.respmenu input:checked ~ nav {
+  display: block;
+}
+
+.respmenu input:checked ~ .fa-bars {
+  display: none;
+}
+
+.respmenu input:not(:checked) ~ .fa-times {
+  display: none;
 }
 
 /* seccion1*/
@@ -118,16 +126,20 @@ ul li a {
 
 .container_ilustracion {
   position: right;
+  display: flex;
+  
 }
 
 .container_ilustracion img {
-  position: absolute;
+
+  display: flex;
   bottom: 10px;
   right: 0px;
   width: 700px;
   -webkit-animation: move_ilustracion 6s ease-in-out infinite;
           animation: move_ilustracion 6s ease-in-out infinite;
 }
+
 
 @-webkit-keyframes move_ilustracion {
   0% {
@@ -348,30 +360,3 @@ h2 {
 }
 /*# sourceMappingURL=estilos.css.map */
 
-/* Sale
-.galeria h1{
-  text-align: center;
-  margin: 20px 0 15px 0;
-  font-weight: 300;
-}
-
-.linea{
-  border-top: 5px solid #0077C0;
-}
-
-.contenedor-imagenes{
-  display: flex;
-  width: 85%;
-  margin: auto;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  border-radius: 3px;
-}
-
-.contenedor-imagenes .imagen{
-  width: 32%;
-  position: relative;
-  height: 250px;
-  margin-bottom: 5px;
-  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .75);
-}/*
